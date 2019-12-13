@@ -22,13 +22,18 @@
 #include "src/IRremote/IRremote.h"
 
 // Default settings (Can be edited here or under the Settings menu on the TinyTV)
+// To open TinyTV Settings: Turn TV off, then press and hold upper-right button
+// while turning TV on. This should open the Settings & IR menu
 long autoPlay = 1;
 long showTimeBar = 1;
 long loopVideo = 0;
 long fullVolume = 1;
 long tinyTVmode = 1;
 
-// IR NEC button codes
+// IR NEC button codes (Can be edited here or under the IR menu on the TinyTV)
+// The IR menu is found with the Settings menu. To toggle buttons for different
+// functionality, open the IR menu, navigate to the desired button, press
+// the button on the new remote, and save the NEC code.
 long powerCode = 0x10AF8877;
 long volUpCode = 0x10AF708F;
 long volDownCode = 0x10AFB04F;
