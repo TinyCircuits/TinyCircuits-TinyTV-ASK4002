@@ -2,6 +2,7 @@
 //  TinyCircuits TinyTV Video Player
 //
 //  Changelog:
+//  1.2.1 4 Jan 2021 - make lower left button configurable to "power off" or channel down
 //  1.2.0 27 Nov 2019 - Add TinyTV mode with CRT effects, double buffered audio
 //  1.1.0 15 Jul 2019 - Change to specifically support TinyScreen+ Video Player
 //        Kit, adding IR reciever functionality and settings menu
@@ -29,6 +30,7 @@ long showTimeBar = 1;
 long loopVideo = 0;
 long fullVolume = 1;
 long tinyTVmode = 1;
+long chanDwn = 0;
 
 // IR NEC button codes (Can be edited here or under the IR menu on the TinyTV)
 // The IR menu is found with the Settings menu. To toggle buttons for different
@@ -231,12 +233,12 @@ void tinyTVloop() {
     getNextFile();
     startNewVideo();
   }
-  if (IRresult == chanDownCode && !isPaused()) {
+  if (IRresult == chanDownCode || (checkNewButtonPress(TSButtonLowerLeft) && chanDwn) && !isPaused()) {
     stopVideo();
     getPreviousFile();
     startNewVideo();
   }
-  if (IRresult == powerCode || checkNewButtonPress(TSButtonLowerLeft)) {
+  if (IRresult == powerCode || (checkNewButtonPress(TSButtonLowerLeft) && !chanDwn)) {
     if (isPaused()) {
       display.on();
       display.goTo(0, 0);
