@@ -129,9 +129,9 @@ void programCodes() {
 
 
 
-char settingNames[][15] = {" TinyTV Mode ", "  Auto Play  ", "  Show Time  ", " Loop Video ", "  Full Vol  "};
-long * settingList[] = {&tinyTVmode, &autoPlay, &showTimeBar, &loopVideo, &fullVolume};
-int numSettings = 5;
+char settingNames[][15] = {" TinyTV Mode ", "  Auto Play  ", "  Show Time  ", " Loop Video ", "  Full Vol  ", "  Chan Dwn  "};
+long * settingList[] = {&tinyTVmode, &autoPlay, &showTimeBar, &loopVideo, &fullVolume, &chanDwn};
+int numSettings = 6;
 int currentSetting = 0;
 
 void readSettings() {
