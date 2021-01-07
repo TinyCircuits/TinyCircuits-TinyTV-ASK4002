@@ -233,12 +233,12 @@ void tinyTVloop() {
     getNextFile();
     startNewVideo();
   }
-  if (IRresult == chanDownCode || (checkNewButtonPress(TSButtonLowerLeft) && chanDwn) && !isPaused()) {
+if (IRresult == chanDownCode || (chanDwn && checkNewButtonPress(TSButtonLowerLeft)) && !isPaused()) {
     stopVideo();
     getPreviousFile();
     startNewVideo();
   }
-  if (IRresult == powerCode || (checkNewButtonPress(TSButtonLowerLeft) && !chanDwn)) {
+  if (IRresult == powerCode || (!chanDwn && checkNewButtonPress(TSButtonLowerLeft))) {
     if (isPaused()) {
       display.on();
       display.goTo(0, 0);
