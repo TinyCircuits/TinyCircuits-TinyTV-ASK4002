@@ -5,7 +5,7 @@
 //  1.2.1 4 Jan 2021 - make lower left button configurable to "power off" or channel down
 //  1.2.0 27 Nov 2019 - Add TinyTV mode with CRT effects, double buffered audio
 //  1.1.0 15 Jul 2019 - Change to specifically support TinyScreen+ Video Player
-//        Kit, adding IR reciever functionality and settings menu
+//        Kit, adding IR receiver functionality and settings menu
 //  1.0.3 15 Nov 2018 - Add option for TinyScreen+ button input
 //  1.0.2 10 April 2017 - Cleanup, add messages about SD card/video detection
 //  1.0.1 3 October 2016 - Add compatibility for new Arcade revision, change
